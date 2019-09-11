@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script src="https://cesiumjs.org/releases/1.61/Build/Cesium/Cesium.js"></script>
+  <link href="https://cesiumjs.org/releases/1.61/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+</head>
+<body>
+  <div id="cesiumContainer" style="width: 100%; height:100%"></div>
+  <script>
+    Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxZTIxZDg4My00YjJkLTQzN2QtYmMxOC05Njk4ZGFkZTQzN2YiLCJpZCI6MTU1ODQsInNjb3BlcyI6WyJhc3IiLCJnYyJdLCJpYXQiOjE1NjgyMTc1MjN9.UDZ_I4jPXqWed_FjHIELbp016IuCNMBzsPexMe3jM3k';
+    var viewer = new Cesium.Viewer('cesiumContainer');
+
+
+    // Load KML fieldset
+
+
+    viewer.dataSources.add(Cesium.KmlDataSource.load('../../../3-Data/3d Model/Stuttgart/OSM/klein/Suttgart21.kml',
+     {
+          camera: viewer.scene.camera,
+          canvas: viewer.scene.canvas
+     })
+    );
+
+
+  </script>
+</body>
+</html>
